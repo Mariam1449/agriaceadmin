@@ -62,35 +62,35 @@ export default async function ProductsPage() {
           </div>
         )}
 
-        <section className="overflow-hidden rounded-[28px] border border-[#243a6a] bg-[linear-gradient(180deg,#243f77_0%,#17233f_100%)] p-6 text-white shadow-[0_28px_70px_rgba(9,16,34,0.28)] sm:p-8">
-          <div className="grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(300px,0.9fr)]">
+        <section className="overflow-hidden rounded-[28px] border border-border bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] p-6 shadow-[var(--shadow-panel),inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-8">
+          <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(300px,0.9fr)]">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/8 px-4 py-2 font-mono text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-[#dbe7ff] shadow-[inset_0_1px_0_rgba(255,255,255,0.14)]">
+              <div className="inline-flex items-center gap-2 rounded-full border border-border bg-[var(--primary-soft)] px-4 py-2 font-mono text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-[var(--primary)] shadow-[var(--shadow-soft)]">
                 <ProductsIcon className="h-3.5 w-3.5" />
                 Product management
               </div>
-              <h3 className="admin-page-title mt-5 text-white">
+              <h3 className="admin-page-title mt-5 text-foreground">
                 Professional catalog control without the clutter.
               </h3>
-              <p className="mt-4 max-w-2xl text-[1rem] leading-8 text-[#c2d2f2]">
+              <p className="mt-4 max-w-2xl text-[1rem] leading-8 text-muted">
                 Review pricing, publication status, and product quality from one place, then move directly into edits.
               </p>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-3">
-              <div className="rounded-[24px] border border-white/16 bg-[linear-gradient(180deg,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0.03)_100%)] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-sm">
+              <div className="rounded-[24px] border border-[#3155a4] bg-[linear-gradient(180deg,#243f77_0%,#17233f_100%)] p-5 shadow-[0_20px_40px_rgba(2,6,23,0.2)]">
                 <p className="text-sm font-medium text-[#c7d6f5]">Published</p>
                 <p className="mt-3 text-[2.5rem] font-bold tracking-[-0.04em] text-white">
                   {publishedCount}
                 </p>
               </div>
-              <div className="rounded-[24px] border border-white/16 bg-[linear-gradient(180deg,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0.03)_100%)] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-sm">
+              <div className="rounded-[24px] border border-[#3155a4] bg-[linear-gradient(180deg,#243f77_0%,#17233f_100%)] p-5 shadow-[0_20px_40px_rgba(2,6,23,0.2)]">
                 <p className="text-sm font-medium text-[#c7d6f5]">Drafts</p>
                 <p className="mt-3 text-[2.5rem] font-bold tracking-[-0.04em] text-white">
                   {draftCount}
                 </p>
               </div>
-              <div className="rounded-[24px] border border-white/16 bg-[linear-gradient(180deg,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0.03)_100%)] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-sm">
+              <div className="rounded-[24px] border border-[#3155a4] bg-[linear-gradient(180deg,#243f77_0%,#17233f_100%)] p-5 shadow-[0_20px_40px_rgba(2,6,23,0.2)]">
                 <p className="text-sm font-medium text-[#c7d6f5]">Featured</p>
                 <p className="mt-3 text-[2.5rem] font-bold tracking-[-0.04em] text-white">
                   {featuredCount}
@@ -106,7 +106,7 @@ export default async function ProductsPage() {
               ? `${products.length} products in the catalog`
               : 'Start building the AgriAce product catalog'}
           </p>
-          <Link href="/products/new" className="button-primary">
+          <Link href="/products/new" className="button-primary button-admin-primary">
             <PlusIcon className="h-4 w-4" />
             Add product
           </Link>
@@ -163,7 +163,10 @@ export default async function ProductsPage() {
                         <p className="mt-2.5 text-sm leading-6 text-muted">
                           Create the first catalog item to give the admin panel real data to work with.
                         </p>
-                        <Link href="/products/new" className="button-primary mt-7">
+                        <Link
+                          href="/products/new"
+                          className="button-primary button-admin-primary mt-7"
+                        >
                           <PlusIcon className="h-4 w-4" />
                           Create first product
                         </Link>
